@@ -29,8 +29,8 @@ app.get('/', function (req, res) {
     headers: headers,
     json: true,
     body: {
-    text: "http://lmgtfy.com/?q="+req.query.text,
-    // endpoint: req.query.text,
+    endpoint: req.query.text,
+    text: "http://lmgtfy.com/?q=" + endpoint,
     channel: req.query.channel_id
     }
   }
