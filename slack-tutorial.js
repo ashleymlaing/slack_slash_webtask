@@ -17,11 +17,7 @@ app.get('/', function (req, res) {
     'Authorization': 'Bearer ' + req.webtaskContext.secrets.token
   }
   
-  for(let i = 0; i < req.query.text.length;i++){
-    if(req.query.text[i] == " "){
-      req.query.text[i] = "+";
-    }
-  }
+  
   
   var options = {
     uri: "https://slack.com/api/chat.postMessage",
@@ -34,9 +30,15 @@ app.get('/', function (req, res) {
     channel: req.query.channel_id
     }
   }
+  
+  for(let i = 0; i < options.text.length;i++){
+    if(options.text[i] == " "){
+      options.text[i] = "+";
+    }
+  }
 
   
-  request(options)
+  request(options.text)
   res.sendStatus(200)
 })
 
