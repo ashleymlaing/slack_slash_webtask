@@ -17,6 +17,12 @@ app.get('/', function (req, res) {
     'Authorization': 'Bearer ' + req.webtaskContext.secrets.token
   }
   
+  for(let i = 0; i < req.query.text.length;i++){
+    if(req.query.text[i] == " "){
+      req.query.text[i] = "+";
+    }
+  }
+  
   var options = {
     uri: "https://slack.com/api/chat.postMessage",
     method: 'POST',
