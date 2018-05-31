@@ -28,14 +28,7 @@ app.get('/', function (req, res) {
     channel: req.query.channel_id
     }
   }
-  
-  // let ending = options.endpoint;
-  
-  // for(let i = 0; i < ending.length; i++){
-  //   if(ending[i] == " "){
-  //     ending[i] = "+";
-  //   }
-  // }
+
   
   request(options)
   res.sendStatus(200)
