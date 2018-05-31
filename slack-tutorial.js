@@ -31,11 +31,11 @@ app.get('/', function (req, res) {
     }
   }
   
-  for(let i = 0; i < options.text.length;i++){
-    if(options.text[i] == " "){
-      options.text[i] = "+";
-    }
-  }
+  // for(let i = 0; i < options.text.length;i++){
+  //   if(options.text[i] == " "){
+  //     options.text[i] = "+";
+  //   }
+  // }
 
   
   request(options)
