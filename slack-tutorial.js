@@ -38,7 +38,7 @@ app.get('/', function (req, res) {
   }
 
   
-  request(options.text)
+  request(options)
   res.sendStatus(200)
 })
 
